@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:loja_online/main.dart';
 import 'package:loja_online/src/auth/components/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -10,8 +11,27 @@ class SignInScreen extends StatelessWidget {
       backgroundColor: const Color.fromARGB(255, 0, 62, 113),
       body: Column(children: [
         Expanded(
-          child: Container(),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: const [
+              Text(
+                'TALISMÃ',
+                style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white
+                    /* color: Color.fromARGB(255, 5, 39, 67), */
+                    ),
+              ),
+              Text(
+                'Materiais p/ construçao, vidraçaria e marmoraria',
+                style: TextStyle(color: Colors.white, fontSize: 17),
+              ),
+            ],
+          ),
         ),
+
+        // Formulario de login
         Container(
           padding: const EdgeInsets.symmetric(
             horizontal: 32,
@@ -53,6 +73,8 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
               ),
+
+              // Botao esqueceu a senha
               Align(
                 alignment: Alignment.centerRight,
                 child: TextButton(
@@ -64,6 +86,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
 
+              // Divisor
               Padding(
                 padding: const EdgeInsets.only(bottom: 10),
                 child: Row(
