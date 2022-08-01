@@ -1,6 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:loja_online/src/home/components/category_tile.dart';
+import 'package:loja_online/src/pages/home/components/category_tile.dart';
 
 class HomeTab extends StatefulWidget {
   HomeTab({Key? key}) : super(key: key);
@@ -10,12 +10,6 @@ class HomeTab extends StatefulWidget {
 }
 
 class _HomeTabState extends State<HomeTab> {
-  List<String> categorias = [
-    'Material p/ Construção',
-    'Vidraçaria',
-    'Marmoraria',
-  ];
-
   String selectedCategory = 'Vidraçaria';
 
   @override
