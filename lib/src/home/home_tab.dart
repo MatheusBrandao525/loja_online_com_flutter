@@ -1,8 +1,22 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:loja_online/src/home/components/category_tile.dart';
 
-class HomeTab extends StatelessWidget {
-  const HomeTab({Key? key}) : super(key: key);
+class HomeTab extends StatefulWidget {
+  HomeTab({Key? key}) : super(key: key);
+
+  @override
+  State<HomeTab> createState() => _HomeTabState();
+}
+
+class _HomeTabState extends State<HomeTab> {
+  List<String> categorias = [
+    'Material p/ Construção',
+    'Vidraçaria',
+    'Marmoraria',
+  ];
+
+  String selectedCategory = 'Vidraçaria';
 
   @override
   Widget build(BuildContext context) {
@@ -86,8 +100,29 @@ class HomeTab extends StatelessWidget {
               ),
             ),
           ),
-          // Categorias
 
+          // Categorias
+          Container(
+            padding: const EdgeInsets.only(left: 25),
+            child: SizedBox(
+              height: 40,
+              child: ListView.separated(
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (_, index) {
+                    return CategoryTile(
+                      onPressed: () {
+                        setState(() {
+                          selectedCategory = categorias[index];
+                        });
+                      },
+                      category: categorias[index],
+                      isSelected: categorias[index] == selectedCategory,
+                    );
+                  },
+                  separatorBuilder: (_, index) => const SizedBox(width: 10),
+                  itemCount: categorias.length),
+            ),
+          ),
           // Grid
         ],
       ),
