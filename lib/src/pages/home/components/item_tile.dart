@@ -53,7 +53,7 @@ class ItemTile extends StatelessWidget {
                       ),
                     ),
                     Text(
-                      '${item.unit}',
+                      item.unit,
                       style: TextStyle(
                         color: Colors.grey.shade500,
                         fontWeight: FontWeight.bold,
