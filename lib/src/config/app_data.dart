@@ -10,7 +10,7 @@ ItemModel piso = ItemModel(
 
 ItemModel rejunte = ItemModel(
   description: 'Melhor rejunte para seu piso',
-  imgUrl: '/assets/Construcao/rejunte.jpg',
+  imgUrl: 'assets/Construcao/rejunte.jpeg',
   itemName: 'Rejunte',
   price: 15.78,
   unit: 'KG',
@@ -18,7 +18,7 @@ ItemModel rejunte = ItemModel(
 
 ItemModel telha = ItemModel(
   description: 'A melhor telha para sua casa',
-  imgUrl: '/assets/Construcao/telha.jpg',
+  imgUrl: 'assets/Construcao/telha.jpg',
   itemName: 'Telha 2.44x1.10',
   price: 89.90,
   unit: 'UN',
@@ -26,7 +26,7 @@ ItemModel telha = ItemModel(
 
 ItemModel prego = ItemModel(
   description: 'Prego belgo de qualidade',
-  imgUrl: '/assets/Construcao/prego.jpg',
+  imgUrl: 'assets/Construcao/prego.jpeg',
   itemName: 'Prego 19x36',
   price: 29.78,
   unit: 'KG',
@@ -34,7 +34,7 @@ ItemModel prego = ItemModel(
 
 ItemModel cimento = ItemModel(
   description: 'Cimento Cp II itau',
-  imgUrl: '/assets/Construcao/cimento.jpg',
+  imgUrl: 'assets/Construcao/cimento.jpg',
   itemName: 'Cimento',
   price: 60.00,
   unit: 'UN',
