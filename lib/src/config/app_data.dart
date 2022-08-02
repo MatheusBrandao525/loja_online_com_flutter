@@ -1,11 +1,11 @@
 import 'package:loja_online/src/models/item_model.dart';
 
-ItemModel piso = ItemModel(
-  description: 'Melhor piso para revestimento',
-  imgUrl: 'assets/Construcao/piso.jpg',
-  itemName: 'Piso Carrara',
-  price: 29.78,
-  unit: 'MT',
+ItemModel joelho = ItemModel(
+  description: 'joelho de qualidade',
+  imgUrl: 'assets/Construcao/joelho.jpeg',
+  itemName: 'joelho de 25mm soldavel',
+  price: 14.15,
+  unit: 'UN',
 );
 
 ItemModel rejunte = ItemModel(
@@ -41,7 +41,7 @@ ItemModel cimento = ItemModel(
 );
 
 List<ItemModel> items = [
-  piso,
+  joelho,
   rejunte,
   telha,
   prego,
