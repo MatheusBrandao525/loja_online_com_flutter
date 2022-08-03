@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loja_online/src/models/item_model.dart';
+import 'package:loja_online/src/pages/product/product_screen.dart';
 import 'package:loja_online/src/services/utils_services.dart';
 
 class ItemTile extends StatelessWidget {
@@ -15,57 +16,73 @@ class ItemTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Card(
-          elevation: 1,
-          shadowColor: Colors.grey.shade300,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(12),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                // imagem
-                Expanded(
-                  child: Image.asset(
-                    item.imgUrl,
-                  ),
-                ),
-                // nome produto
-                Text(
-                  item.itemName,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-
-                // preço - unidade
-                Row(
-                  children: [
-                    Text(
-                      utilsServices.priceToCurrency(item.price),
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 20,
-                        color: Color.fromARGB(255, 0, 62, 113),
-                      ),
+        //Carrinho
+        GestureDetector(
+          onTap: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (c) {
+                  return ProductScreen(
+                    item: item,
+                  );
+                },
+              ),
+            );
+          },
+          child: Card(
+            elevation: 1,
+            shadowColor: Colors.grey.shade300,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(20),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(12),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // imagem
+                  Expanded(
+                    child: Image.asset(
+                      item.imgUrl,
                     ),
-                    Text(
-                      item.unit,
-                      style: TextStyle(
-                        color: Colors.grey.shade500,
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12,
+                  ),
+                  // nome produto
+                  Text(
+                    item.itemName,
+                    style: const TextStyle(
+                      fontSize: 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+
+                  // preço - unidade
+                  Row(
+                    children: [
+                      Text(
+                        utilsServices.priceToCurrency(item.price),
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                          color: Color.fromARGB(255, 0, 62, 113),
+                        ),
                       ),
-                    )
-                  ],
-                ),
-              ],
+                      Text(
+                        item.unit,
+                        style: TextStyle(
+                          color: Colors.grey.shade500,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12,
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),
+
+        // Add ao Carrinho
         Positioned(
           top: 4,
           right: 4,
