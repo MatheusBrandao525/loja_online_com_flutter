@@ -10,7 +10,7 @@ ItemModel joelho = ItemModel(
 
 ItemModel rejunte = ItemModel(
   description: 'Melhor rejunte para seu piso',
-  imgUrl: 'assets/Construcao/rejunte.jpeg',
+  imgUrl: 'assets/Construcao/rejunte.png',
   itemName: 'Rejunte',
   price: 15.78,
   unit: 'KG',
