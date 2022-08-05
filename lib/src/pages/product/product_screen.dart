@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:loja_online/src/models/item_model.dart';
+import 'package:loja_online/src/pages/common_widgets/quantity_widget.dart';
 import 'package:loja_online/src/services/utils_services.dart';
 
 class ProductScreen extends StatelessWidget {
@@ -55,11 +56,7 @@ class ProductScreen extends StatelessWidget {
                               ),
                             ),
                           ),
-                          Container(
-                            height: 30,
-                            width: 70,
-                            color: Colors.red,
-                          )
+                          const QuantityWidget(),
                         ],
                       ),
 
