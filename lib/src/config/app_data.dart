@@ -2,42 +2,42 @@ import 'package:loja_online/src/models/item_model.dart';
 
 ItemModel joelho = ItemModel(
   description: 'joelho de qualidade',
-  imgUrl: 'assets/Construcao/joelho.jpeg',
+  imgUrl: 'assets/Construcao/img_joelho1.png',
   itemName: 'joelho de 25mm soldavel',
   price: 14.15,
-  unit: 'UN',
+  unit: ' un',
 );
 
 ItemModel rejunte = ItemModel(
   description: 'Melhor rejunte para seu piso',
-  imgUrl: 'assets/Construcao/rejunte.png',
+  imgUrl: 'assets/Construcao/img_rejunte.png',
   itemName: 'Rejunte',
   price: 15.78,
-  unit: 'KG',
+  unit: ' kg',
 );
 
 ItemModel telha = ItemModel(
   description: 'A melhor telha para sua casa',
-  imgUrl: 'assets/Construcao/telha.jpg',
+  imgUrl: 'assets/Construcao/img_telha.png',
   itemName: 'Telha 2.44x1.10',
   price: 89.90,
-  unit: 'UN',
+  unit: ' un',
 );
 
 ItemModel prego = ItemModel(
   description: 'Prego belgo de qualidade',
-  imgUrl: 'assets/Construcao/prego.jpeg',
+  imgUrl: 'assets/Construcao/img_prego.png',
   itemName: 'Prego 19x36',
   price: 29.78,
-  unit: 'KG',
+  unit: ' kg',
 );
 
 ItemModel cimento = ItemModel(
   description: 'Cimento Cp II itau',
-  imgUrl: 'assets/Construcao/cimento.jpg',
+  imgUrl: 'assets/Construcao/img_cimento.png',
   itemName: 'Cimento',
   price: 60.00,
-  unit: 'UN',
+  unit: ' un',
 );
 
 List<ItemModel> items = [
