@@ -41,9 +41,16 @@ class _CartTabState extends State<CartTab> {
             child: ListView.builder(
               itemCount: appData.cartItems.length,
               itemBuilder: (_, index) {
+                final cartItem = appData.cartItems[index];
                 return CartTile(
                   cartItem: appData.cartItems[index],
-                  remove: removeItemFromCart,
+                  updatedQuantity: (qtd) {
+                    if (qtd == 0) {
+                      removeItemFromCart(appData.cartItems[index]);
+                    } else {
+                      setState(() => cartItem.quantity = qtd);
+                    }
+                  },
                 );
               },
             ),
