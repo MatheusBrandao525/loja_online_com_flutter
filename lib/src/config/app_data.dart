@@ -1,3 +1,4 @@
+import 'package:loja_online/src/models/cart_item_model.dart';
 import 'package:loja_online/src/models/item_model.dart';
 
 ItemModel joelho = ItemModel(
@@ -52,4 +53,19 @@ List<String> categorias = [
   'Material p/ Construção',
   'Vidraçaria',
   'Marmoraria',
+];
+
+List<CartItemModel> cartItems = [
+  CartItemModel(
+    item: joelho,
+    quantity: 3,
+  ),
+  CartItemModel(
+    item: cimento,
+    quantity: 10,
+  ),
+  CartItemModel(
+    item: prego,
+    quantity: 1,
+  ),
 ];
