@@ -3,14 +3,21 @@ import 'package:loja_online/src/models/cart_item_model.dart';
 import 'package:loja_online/src/pages/common_widgets/quantity_widget.dart';
 import 'package:loja_online/src/services/utils_services.dart';
 
-class CartTile extends StatelessWidget {
+class CartTile extends StatefulWidget {
   final CartItemModel cartItem;
+  final Function(CartItemModel) remove;
 
-  CartTile({
+  const CartTile({
     Key? key,
     required this.cartItem,
+    required this.remove,
   }) : super(key: key);
 
+  @override
+  State<CartTile> createState() => _CartTileState();
+}
+
+class _CartTileState extends State<CartTile> {
   final UtilsServices utilsServices = UtilsServices();
 
   @override
@@ -23,20 +30,20 @@ class CartTile extends StatelessWidget {
       child: ListTile(
         // imagem
         leading: Image.asset(
-          cartItem.item.imgUrl,
+          widget.cartItem.item.imgUrl,
           height: 60,
           width: 60,
         ),
 
         // titulo
         title: Text(
-          cartItem.item.itemName,
+          widget.cartItem.item.itemName,
           style: const TextStyle(fontWeight: FontWeight.w500),
         ),
 
         // total
         subtitle: Text(
-          utilsServices.priceToCurrency(cartItem.totalPrice()),
+          utilsServices.priceToCurrency(widget.cartItem.totalPrice()),
           style: const TextStyle(
             color: Color.fromARGB(255, 0, 62, 113),
             fontWeight: FontWeight.bold,
@@ -45,9 +52,19 @@ class CartTile extends StatelessWidget {
 
         // quantidade
         trailing: QuantityWidget(
-          suffixText: cartItem.item.unit,
-          value: cartItem.quantity,
-          result: ((quantity) {}),
+          suffixText: widget.cartItem.item.unit,
+          value: widget.cartItem.quantity,
+          result: ((quantity) {
+            setState(() {
+              widget.cartItem.quantity = quantity;
+
+              if (quantity == 0) {
+                // Remover item
+                widget.remove(widget.cartItem);
+              }
+            });
+          }),
+          isRemovable: true,
         ),
       ),
     );
