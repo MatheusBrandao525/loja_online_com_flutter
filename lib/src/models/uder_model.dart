@@ -8,7 +8,8 @@ class UserModel {
   UserModel({
     required this.celular,
     required this.email,
-  })
+    required this.cpf,
+    required this.name,
+    required this.senha,
+  });
 }
-
-UserModel user = UserModel(celular: '993203891', email: 'mafe123silva@gmail.com',);

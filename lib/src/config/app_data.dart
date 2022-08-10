@@ -1,5 +1,6 @@
 import 'package:loja_online/src/models/cart_item_model.dart';
 import 'package:loja_online/src/models/item_model.dart';
+import 'package:loja_online/src/models/uder_model.dart';
 
 ItemModel joelho = ItemModel(
   description: 'joelho de qualidade',
@@ -69,3 +70,11 @@ List<CartItemModel> cartItems = [
     quantity: 1,
   ),
 ];
+
+UserModel user = UserModel(
+  celular: '993203891',
+  cpf: '000.455.745-74',
+  email: 'mafe123silva@gmail.com',
+  name: 'Matheus Felipe',
+  senha: 'exagon10@',
+);
