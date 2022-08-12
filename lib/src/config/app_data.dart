@@ -1,5 +1,6 @@
 import 'package:loja_online/src/models/cart_item_model.dart';
 import 'package:loja_online/src/models/item_model.dart';
+import 'package:loja_online/src/models/order_model.dart';
 import 'package:loja_online/src/models/uder_model.dart';
 
 ItemModel joelho = ItemModel(
@@ -78,3 +79,14 @@ UserModel user = UserModel(
   name: 'Matheus Felipe',
   senha: 'exagon10@',
 );
+
+List<OrderModel> orders = [
+  OrderModel(
+      copyAndPaste: 'wsew6s65sds87f7',
+      createdDateTime: DateTime.parse('2022,08,11 10:34:42'),
+      id: 'sfuh37h73r83',
+      items: CartItemModel(item: apple, quantity: 2),
+      overdueDateTime: DateTime.parse('2022-22-08 11:53:05'),
+      status: 'pending_payment',
+      total: 0)
+];
