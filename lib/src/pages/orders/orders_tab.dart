@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:loja_online/src/config/app_data.dart' as appData;
+import 'package:loja_online/src/pages/orders/components/order_tile.dart';
 
 class OrdersTab extends StatelessWidget {
   const OrdersTab({Key? key}) : super(key: key);
@@ -15,11 +17,15 @@ class OrdersTab extends StatelessWidget {
       body: ListView.separated(
         padding: const EdgeInsets.all(16),
         physics: const BouncingScrollPhysics(),
-        itemBuilder: itemBuilder,
+        itemBuilder: (_, index) {
+          return OrderTile(
+            order: appData.orders[index],
+          );
+        },
         separatorBuilder: (_, index) => const SizedBox(
           height: 10,
         ),
-        itemCount: itemCount,
+        itemCount: appData.orders.length,
       ),
     );
   }
