@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/foundation/key.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:loja_online/src/models/cart_item_model.dart';
 import 'package:loja_online/src/models/order_model.dart';
 import 'package:loja_online/src/services/utils_services.dart';
 
@@ -36,7 +37,66 @@ class OrderTile extends StatelessWidget {
               ),
             ],
           ),
+          childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+          children: [
+            SizedBox(
+              height: 150,
+              child: Row(
+                children: [
+                  Expanded(
+                    flex: 3,
+                    child: ListView(
+                      children: order.items.map((orderItem) {
+                        return _OrderWidget(
+                          utilsServices: utilsServices,
+                          orderItem: orderItem,
+                        );
+                      }).toList(),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      color: Colors.blue,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
+      ),
+    );
+  }
+}
+
+class _OrderWidget extends StatelessWidget {
+  const _OrderWidget(
+      {Key? key, required this.utilsServices, required this.orderItem})
+      : super(key: key);
+
+  final UtilsServices utilsServices;
+  final CartItemModel orderItem;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Row(
+        children: [
+          Text(
+            '${orderItem.quantity} ${orderItem.item.unit} ',
+            style: const TextStyle(
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+          Text(orderItem.item.itemName),
+          Text(
+            utilsServices.priceToCurrency(
+              orderItem.totalPrice(),
+            ),
+          ),
+        ],
       ),
     );
   }

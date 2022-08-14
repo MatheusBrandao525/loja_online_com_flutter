@@ -97,6 +97,10 @@ List<OrderModel> orders = [
         item: joelho,
         quantity: 2,
       ),
+      CartItemModel(
+        item: cimento,
+        quantity: 2,
+      ),
     ],
   )
 ];
