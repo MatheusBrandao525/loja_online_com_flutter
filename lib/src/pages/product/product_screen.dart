@@ -4,7 +4,7 @@ import 'package:loja_online/src/pages/common_widgets/quantity_widget.dart';
 import 'package:loja_online/src/services/utils_services.dart';
 
 class ProductScreen extends StatefulWidget {
-  ProductScreen({Key? key, required this.item}) : super(key: key);
+  const ProductScreen({Key? key, required this.item}) : super(key: key);
 
   final ItemModel item;
 

@@ -69,7 +69,7 @@ class QuantityWidget extends StatelessWidget {
   }
 }
 
-class _quantityButton extends StatelessWidget {
+class _quantityButton extends StatefulWidget {
   final Color color;
   final IconData icon;
   final VoidCallback onPressed;
@@ -81,20 +81,25 @@ class _quantityButton extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<_quantityButton> createState() => _quantityButtonState();
+}
+
+class _quantityButtonState extends State<_quantityButton> {
+  @override
   Widget build(BuildContext context) {
     return Material(
       child: InkWell(
         borderRadius: BorderRadius.circular(50),
-        onTap: onPressed,
+        onTap: widget.onPressed,
         child: Ink(
           height: 40,
           width: 40,
           decoration: BoxDecoration(
-            color: color,
+            color: widget.color,
             shape: BoxShape.circle,
           ),
           child: Icon(
-            icon,
+            widget.icon,
             color: Colors.white,
             size: 16,
           ),

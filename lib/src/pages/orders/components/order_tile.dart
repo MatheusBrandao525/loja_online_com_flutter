@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:loja_online/src/models/cart_item_model.dart';
 import 'package:loja_online/src/models/order_model.dart';
 import 'package:loja_online/src/services/utils_services.dart';

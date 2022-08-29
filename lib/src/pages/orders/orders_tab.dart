@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:loja_online/src/config/app_data.dart' as appData;
 import 'package:loja_online/src/pages/orders/components/order_tile.dart';
 

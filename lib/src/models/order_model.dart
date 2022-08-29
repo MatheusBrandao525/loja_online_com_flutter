@@ -1,4 +1,3 @@
-import 'package:flutter/services.dart';
 import 'package:loja_online/src/models/cart_item_model.dart';
 
 class OrderModel {
