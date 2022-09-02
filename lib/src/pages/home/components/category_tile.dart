@@ -20,8 +20,8 @@ class CategoryTile extends StatelessWidget {
         alignment: Alignment.center,
         child: Container(
           padding: const EdgeInsets.symmetric(
-            horizontal: 6,
-            vertical: 7,
+            horizontal: 15,
+            vertical: 25,
           ),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(10),

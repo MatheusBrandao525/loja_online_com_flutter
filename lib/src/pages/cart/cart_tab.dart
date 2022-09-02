@@ -100,7 +100,7 @@ class _CartTabState extends State<CartTab> {
                         print(result);
                       },
                       child: const Text(
-                        'Concluir pedido',
+                        'Salvar Orçamento',
                         style: TextStyle(
                           fontSize: 18,
                         ),

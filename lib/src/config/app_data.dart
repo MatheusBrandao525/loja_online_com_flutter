@@ -52,9 +52,19 @@ List<ItemModel> items = [
 ];
 
 List<String> categorias = [
+  'Banheiro',
+  'Churrasqueiras',
+  'Decoração',
+  'Eletrica',
+  'Encanação/Esg',
+  'Encanação/Sold',
+  'Ferragens',
+  'Ferramentas',
   'Material p/ Construção',
-  'Vidraçaria',
   'Marmoraria',
+  'Portas',
+  'Tintas',
+  'Vidraçaria',
 ];
 
 List<CartItemModel> cartItems = [

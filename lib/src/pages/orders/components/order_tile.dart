@@ -36,6 +36,7 @@ class OrderTile extends StatelessWidget {
             ],
           ),
           childrenPadding: const EdgeInsets.fromLTRB(16, 10, 10, 10),
+          expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(
               height: 150,
@@ -55,6 +56,38 @@ class OrderTile extends StatelessWidget {
                   ),
                 ],
               ),
+            ),
+
+            // Total
+            Text.rich(
+              TextSpan(
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+                children: [
+                  const TextSpan(
+                    text: 'Total ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(
+                    text: utilsServices.priceToCurrency(order.total),
+                  ),
+                ],
+              ),
+            ),
+
+            // Botao Compartilhar
+            ElevatedButton.icon(
+              style: ElevatedButton.styleFrom(
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+              ),
+              onPressed: () {},
+              icon: const Icon(Icons.offline_share_outlined),
+              label: const Text('Compartilhar'),
             ),
           ],
         ),
