@@ -5,16 +5,19 @@ class OrderModel {
   DateTime createdDateTime;
   DateTime overdueDateTime;
   List<CartItemModel> items;
+  String name;
   String status;
   String copyAndPaste;
   double total;
 
-  OrderModel(
-      {required this.copyAndPaste,
-      required this.createdDateTime,
-      required this.id,
-      required this.items,
-      required this.overdueDateTime,
-      required this.status,
-      required this.total});
+  OrderModel({
+    required this.copyAndPaste,
+    required this.createdDateTime,
+    required this.id,
+    required this.name,
+    required this.items,
+    required this.overdueDateTime,
+    required this.status,
+    required this.total,
+  });
 }

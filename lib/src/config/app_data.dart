@@ -90,6 +90,7 @@ List<OrderModel> orders = [
       '2022-22-08 11:53:05.000',
     ),
     id: 'sfuh37h73r83',
+    name: 'Matheus',
     status: 'pending_payment',
     total: 0,
     items: [

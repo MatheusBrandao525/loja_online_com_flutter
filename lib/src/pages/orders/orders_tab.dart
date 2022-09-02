@@ -10,10 +10,10 @@ class OrdersTab extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 0, 62, 113),
-        title: const Text('Pedidos'),
+        title: const Text('Orçamentos'),
       ),
       body: ListView.separated(
-        padding: const EdgeInsets.all(16),
+        padding: const EdgeInsets.all(14),
         physics: const BouncingScrollPhysics(),
         itemBuilder: (_, index) {
           return OrderTile(

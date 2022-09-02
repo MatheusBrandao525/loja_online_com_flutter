@@ -51,7 +51,7 @@ class _BaseScreenState extends State<BaseScreen> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
-            label: 'Pedidos',
+            label: 'Orçamentos',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person_outline),

@@ -25,7 +25,7 @@ class OrderTile extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text('Pedido: ${order.id}'),
+              Text('Orçamento: ${order.name}'),
               Text(
                 utilsServices.formatDateTime(order.createdDateTime),
                 style: const TextStyle(
@@ -35,14 +35,15 @@ class OrderTile extends StatelessWidget {
               ),
             ],
           ),
-          childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+          childrenPadding: const EdgeInsets.fromLTRB(16, 10, 10, 10),
           children: [
             SizedBox(
               height: 150,
+              width: 350,
               child: Row(
                 children: [
                   Expanded(
-                    flex: 3,
+                    flex: 5,
                     child: ListView(
                       children: order.items.map((orderItem) {
                         return _OrderWidget(
@@ -50,12 +51,6 @@ class OrderTile extends StatelessWidget {
                           orderItem: orderItem,
                         );
                       }).toList(),
-                    ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Container(
-                      color: Colors.blue,
                     ),
                   ),
                 ],
